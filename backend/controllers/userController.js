@@ -40,17 +40,17 @@ const registerUser = async (req, res) => {
 
     const exists = await userModel.findOne({ email });
     if (exists) {
-      return res.json({ success: false, message: "User Already Exists" });
+      return res.json({ success: false, message: "User Already Exists" })
     }
 
     //validating email format & string password
     if (!validator.isEmail(email)) {
-      return res.json({ success: false, message: "Please Enter Valid Email" });
+      return res.json({ success: false, message: "Please Enter Valid Email" })
     }
     if (password.length < 8) {
       return res.json({
         success: false,
-        message: "Password Enter A Strong Password",
+        message: "Password Enter A Strong Password"
       });
     }
     //Hashing User Password
@@ -63,9 +63,9 @@ const registerUser = async (req, res) => {
       password: hashedPassword,
     });
 
-    const user = await newUser.save();
+    const user = await newUser.save()
 
-    const token = createToken(user._id);
+    const token = createToken(user._id)
 
     res.json({ success: true, token });
   } catch (error) {
