@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
@@ -23,9 +24,9 @@ const App = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <ToastContainer />
-      {token === "" ? (
+      {token === "" ? 
         <Login setToken={setToken} />
-      ) : (
+       : 
         <>
           <Navbar setToken={setToken} />
           <hr />
@@ -41,7 +42,7 @@ const App = () => {
             </div>
           </div>
         </>
-      )}
+      }
     </div>
   );
 };
