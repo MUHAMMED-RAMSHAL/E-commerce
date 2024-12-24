@@ -11,7 +11,7 @@ const LatestCollection = () => {
   useEffect(() => {
     setLatestProducts(products.slice(0, 10));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [products]);
 
   return (
     <div className="my-10">

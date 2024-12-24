@@ -13,7 +13,7 @@ const BestSeller = () => {
     setBestSeller(bestProduct.slice(0, 5));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [products]);
   return (
     <div className="my-10">
       <div className="text-center text-3xl py-8">
